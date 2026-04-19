@@ -337,44 +337,811 @@
     </div>
 
     <script>
-        // --- DATABASE RAKSASA UNTUK MENCAPAI 800+ BARIS LOGIKA ---
-        const dorkEngine = {
-            sqli: {
-                options: ["All SQL Types", "PHP (id=)", "ASPX (id=)", "Login Error Based", "Product/Gallery"],
-                data: [
-                    "php?id=", "item.php?id=", "news.php?id=", "product.php?id=", "details.php?id=", 
-                    "show.php?id=", "gallery.php?id=", "view.php?id=", "event.php?id=", "cat.php?id=",
-                    "main.php?id=", "list.php?id=", "index.php?id=", "aspx?id=", "asp?id=", "cfm?id="
-                ]
-            },
-            lfi: {
-                options: ["General LFI", "Linux Path", "Windows Path", "Config Inclusion"],
-                data: [
-                    "page=", "file=", "path=", "dir=", "include=", "content=", "folder=", "view=", 
-                    "doc=", "action=", "lang=", "category=", "name=", "download=", "read="
-                ]
-            },
-            admin: {
-                options: ["Standard CMS", "WordPress Admin", "Joomla Admin", "Direct Login Path"],
-                data: [
-                    "admin/", "administrator/", "wp-admin/", "cp-admin/", "login.php", "admin.php",
-                    "controlpanel/", "dashboard/", "manage/", "backend/", "auth/", "member/"
-                ]
-            },
-            files: {
-                options: ["Environment (.env)", "Database SQL", "Backup/Config", "Log Files"],
-                data: [
-                    ".env", ".git", "config.php.bak", "database.sql", "backup.sql", "dump.sql",
-                    "settings.py", "web.config", "composer.json", "package.json", "laravel.log"
-                ]
-            },
-            xss: {
-                options: ["Search Bar", "Feedback Form", "User Query", "Profile Info"],
-                data: [
-                    "search.php?q=", "query.php?s=", "search.aspx?q=", "search?key=", "find.php?id="
-                ]
+/**
+ * ============================================================================
+ * DESTRO OMNI-ENGINE V11.0 - THE COLOSSAL ARCHIVE
+ * AUTHOR    : MAS (CAKRAWALA)
+ * SCHOOL    : SMP NEGERI 1 SLAWI
+ * UNIT      : 8TH GRADE TECH DIVISION
+ * LOG       : APRIL 2026 UPDATE
+ * ============================================================================
+ * * [SYSTEM DOCUMENTATION]
+ * Kode ini dirancang untuk audit keamanan tingkat lanjut.
+ * Struktur data menggunakan sistem Array Flat agar mudah dimodifikasi 
+ * dan memberikan volume baris yang masif di SPCK Editor.
+ */
+
+const dorkEngine = {
+    sqli: {
+        options: ["All SQL Types", "PHP Parameter", "ASPX/ASP Engine", "Login Bypass", "Error Based Search"],
+        data: [
+            "index.php?id=",
+            "item.php?id=",
+            "news.php?id=",
+            "product.php?id=",
+            "details.php?id=",
+            "show.php?id=",
+            "gallery.php?id=",
+            "view.php?id=",
+            "event.php?id=",
+            "cat.php?id=",
+            "category.php?id=",
+            "main.php?id=",
+            "list.php?id=",
+            "aspx?id=",
+            "asp?id=",
+            "cfm?id=",
+            "php?cat=",
+            "php?category=",
+            "php?itemid=",
+            "php?pid=",
+            "php?view=",
+            "php?pageid=",
+            "php?sid=",
+            "php?uid=",
+            "php?action=",
+            "php?query=",
+            "php?search=",
+            "php?name=",
+            "php?file=",
+            "php?path=",
+            "php?dir=",
+            "php?folder=",
+            "php?doc=",
+            "php?txt=",
+            "php?lang=",
+            "php?type=",
+            "php?sort=",
+            "php?order=",
+            "php?group=",
+            "php?user=",
+            "php?member=",
+            "php?client=",
+            "php?account=",
+            "php?login=",
+            "php?admin=",
+            "php?profile=",
+            "php?dashboard=",
+            "php?control=",
+            "php?manage=",
+            "php?panel=",
+            "php?system=",
+            "php?core=",
+            "php?engine=",
+            "php?module=",
+            "php?plugin=",
+            "php?ext=",
+            "php?lib=",
+            "php?script=",
+            "php?style=",
+            "php?theme=",
+            "php?config=",
+            "php?setup=",
+            "php?install=",
+            "php?update=",
+            "php?patch=",
+            "php?fix=",
+            "php?backup=",
+            "php?restore=",
+            "php?api=",
+            "php?v1=",
+            "php?v2=",
+            "php?token=",
+            "php?key=",
+            "php?secret=",
+            "php?auth=",
+            "php?session=",
+            "php?valid=",
+            "php?check=",
+            "php?test=",
+            "php?dev=",
+            "php?debug=",
+            "php?log=",
+            "php?error=",
+            "php?report=",
+            "php?invoice=",
+            "php?bill=",
+            "php?pay=",
+            "php?orderid=",
+            "php?transid=",
+            "php?trackid=",
+            "php?shipid=",
+            "php?mailid=",
+            "php?msgid=",
+            "php?postid=",
+            "php?threadid=",
+            "php?forumid=",
+            "php?boardid=",
+            "php?catid=",
+            "php?subid=",
+            "php?topid=",
+            "php?mid=",
+            "php?did=",
+            "php?eid=",
+            "php?fid=",
+            "php?gid=",
+            "php?hid=",
+            "php?iid=",
+            "php?jid=",
+            "php?kid=",
+            "php?lid=",
+            "php?xid=",
+            "php?yid=",
+            "php?zid=",
+            "login.php?user=",
+            "login.php?id=",
+            "admin.php?id=",
+            "auth.php?id=",
+            "check.php?id=",
+            "verify.php?id=",
+            "validate.php?id=",
+            "process.php?id=",
+            "submit.php?id=",
+            "action.php?id=",
+            "task.php?id=",
+            "job.php?id=",
+            "work.php?id=",
+            "run.php?id=",
+            "execute.php?id=",
+            "manage.php?id=",
+            "control.php?id=",
+            "mod.php?id=",
+            "cms.php?id=",
+            "stats.php?id=",
+            "history.php?id=",
+            "archive.php?id=",
+            "fetch.php?id=",
+            "pull.php?id=",
+            "push.php?id=",
+            "sync.php?id=",
+            "aspx?cat=",
+            "aspx?view=",
+            "aspx?item=",
+            "asp?cat=",
+            "asp?view=",
+            "asp?item="
+        ]
+    },
+    lfi: {
+        options: ["General LFI", "Linux System Path", "Windows Config", "Source Disclosure"],
+        data: [
+            "page=",
+            "file=",
+            "path=",
+            "dir=",
+            "include=",
+            "content=",
+            "folder=",
+            "view=",
+            "doc=",
+            "action=",
+            "lang=",
+            "category=",
+            "name=",
+            "download=",
+            "read=",
+            "load=",
+            "get=",
+            "show=",
+            "src=",
+            "style=",
+            "template=",
+            "theme=",
+            "type=",
+            "inc=",
+            "nav=",
+            "url=",
+            "link=",
+            "open=",
+            "openfile=",
+            "target=",
+            "dest=",
+            "to=",
+            "from=",
+            "source=",
+            "base=",
+            "root=",
+            "home=",
+            "site=",
+            "web=",
+            "server=",
+            "remote=",
+            "local=",
+            "uri=",
+            "urn=",
+            "href=",
+            "img=",
+            "script_path=",
+            "css_path=",
+            "js_path=",
+            "image_path=",
+            "media_path=",
+            "upload_path=",
+            "tmp_path=",
+            "cache_path=",
+            "log_path=",
+            "backup_path=",
+            "conf_path=",
+            "sys_path=",
+            "bin_path=",
+            "etc_path=",
+            "var_path=",
+            "usr_path=",
+            "opt_path=",
+            "lib_path=",
+            "ext_path=",
+            "module_path=",
+            "plugin_path=",
+            "theme_path=",
+            "asset_path=",
+            "resource_path=",
+            "static_path=",
+            "public_path=",
+            "private_path=",
+            "internal_path=",
+            "external_path=",
+            "shared_path=",
+            "temp_path=",
+            "data_path=",
+            "db_path=",
+            "sql_path=",
+            "xml_path=",
+            "json_path=",
+            "txt_path=",
+            "log_file=",
+            "config_file=",
+            "env_file=",
+            "secret_file=",
+            "key_file=",
+            "cert_file=",
+            "token_file=",
+            "access_file=",
+            "error_file=",
+            "debug_file=",
+            "audit_file=",
+            "system_file=",
+            "kernel_file=",
+            "cron_file=",
+            "mail_file=",
+            "apache_file=",
+            "nginx_file=",
+            "php_file=",
+            "mysql_file=",
+            "redis_file=",
+            "mongo_file=",
+            "docker_file=",
+            "kube_file=",
+            "aws_file=",
+            "azure_file=",
+            "gcp_file=",
+            "include_path=",
+            "library_path=",
+            "template_path=",
+            "content_path=",
+            "file_path=",
+            "doc_path=",
+            "folder_path=",
+            "dir_path=",
+            "site_path=",
+            "base_path=",
+            "root_path=",
+            "home_path=",
+            "user_path=",
+            "client_path=",
+            "server_path=",
+            "remote_path=",
+            "local_path=",
+            "app_path=",
+            "core_path=",
+            "system_path=",
+            "api_path=",
+            "v1_path=",
+            "v2_path=",
+            "v3_path="
+        ]
+    },
+    admin: {
+        options: ["CMS Dashboard", "WordPress Panels", "Joomla Control", "Custom Login Path"],
+        data: [
+            "admin/",
+            "administrator/",
+            "wp-admin/",
+            "cp-admin/",
+            "login.php",
+            "admin.php",
+            "controlpanel/",
+            "dashboard/",
+            "manage/",
+            "backend/",
+            "auth/",
+            "member/",
+            "cpanel/",
+            "directadmin/",
+            "plesk/",
+            "webmin/",
+            "vps-admin/",
+            "staff/login",
+            "user/login",
+            "portal/login",
+            "site/admin",
+            "secure/login",
+            "modir/",
+            "manage/login",
+            "admin_login/",
+            "sysadmin/",
+            "superadmin/",
+            "root/login",
+            "master/login",
+            "cms/admin",
+            "joomla/administrator",
+            "magento/admin",
+            "drupal/user/login",
+            "opencart/admin",
+            "prestashop/admin",
+            "whmcs/admin",
+            "vbulletin/admincp",
+            "phpbb/adm",
+            "mybb/admin",
+            "xenforo/admin.php",
+            "discourse/admin",
+            "ghost/ghost",
+            "strapi/admin",
+            "directus/admin",
+            "keystone/admin",
+            "payload/admin",
+            "wagtail/admin",
+            "django/admin",
+            "flask/admin",
+            "rails/admin",
+            "laravel/nova",
+            "laravel/filament",
+            "sonarqube/login",
+            "jenkins/login",
+            "gitlab/users/sign_in",
+            "grafana/login",
+            "kibana/app/login",
+            "prometheus/login",
+            "rabbitmq/login",
+            "redisinsight/login",
+            "admin1/",
+            "admin2/",
+            "admin3/",
+            "admin_area/",
+            "admin_control/",
+            "admin_panel/",
+            "admin_portal/",
+            "admin_system/",
+            "admin_web/",
+            "manager/",
+            "mod_admin/",
+            "site_admin/",
+            "web_admin/",
+            "panel_admin/",
+            "control_admin/",
+            "system_admin/",
+            "master_admin/",
+            "super_admin/",
+            "main_admin/",
+            "global_admin/",
+            "root_admin/",
+            "staff_admin/",
+            "client_admin/",
+            "user_admin/",
+            "member_admin/",
+            "office_admin/",
+            "backend_admin/",
+            "internal_admin/",
+            "private_admin/",
+            "secure_admin/",
+            "security_admin/",
+            "config_admin/",
+            "setup_admin/",
+            "install_admin/",
+            "update_admin/",
+            "patch_admin/",
+            "fix_admin/",
+            "backup_admin/",
+            "restore_admin/",
+            "api_admin/",
+            "v1_admin/",
+            "v2_admin/",
+            "v3_admin/",
+            "dev_admin/",
+            "test_admin/",
+            "debug_admin/",
+            "log_admin/",
+            "stat_admin/",
+            "report_admin/",
+            "user_login/",
+            "member_login/",
+            "client_login/",
+            "staff_login/",
+            "portal_login/",
+            "panel_login/",
+            "secure_login/",
+            "auth_login/",
+            "sign_in/",
+            "register/",
+            "signup/",
+            "forgot_password/",
+            "reset_password/"
+        ]
+    },
+    files: {
+        options: ["Environment (.env)", "Database Backups", "Log Analysis", "Server Configs"],
+        data: [
+            ".env",
+            ".git/config",
+            ".git/HEAD",
+            ".git/index",
+            ".git/logs/HEAD",
+            ".htaccess",
+            ".htpasswd",
+            ".bash_history",
+            ".ssh/id_rsa",
+            ".ssh/known_hosts",
+            ".ssh/authorized_keys",
+            ".npmrc",
+            ".dockerconfigjson",
+            "config.php.bak",
+            "config.php.old",
+            "config.php.save",
+            "config.php.txt",
+            "wp-config.php.bak",
+            "wp-config.php.swp",
+            "database.sql",
+            "backup.sql",
+            "dump.sql",
+            "db.sql",
+            "backup.zip",
+            "backup.tar.gz",
+            "backup.rar",
+            "backup.7z",
+            "data.zip",
+            "data.sql",
+            "settings.py",
+            "web.config",
+            "composer.json",
+            "composer.lock",
+            "package.json",
+            "package-lock.json",
+            "docker-compose.yml",
+            "phpinfo.php",
+            "info.php",
+            "setup.php",
+            "install.php",
+            "laravel.log",
+            "error_log",
+            "debug.log",
+            "sftp.json",
+            "wp-config.txt",
+            "credentials.json",
+            "auth.json",
+            "client_secret.json",
+            "access_log",
+            "mysql.log",
+            "proftpd.log",
+            "vsftpd.log",
+            "lighttpd.log",
+            "config.json",
+            "settings.json",
+            "database.yml",
+            "db_backup.sql",
+            "site_backup.zip",
+            "production.log",
+            "test.log",
+            "development.log",
+            "security.log",
+            "audit.log",
+            "system.log",
+            "kernel.log",
+            "cron.log",
+            "mail.log",
+            "apache2.log",
+            "nginx.log",
+            "error.log",
+            "access.log",
+            "transfer.log",
+            "firewall.log",
+            "ids.log",
+            "ips.log",
+            "proxy.log",
+            "vpn.log",
+            "dns.log",
+            "dhcp.log",
+            "sql_server.log",
+            "oracle.log",
+            "mongodb.log",
+            "redis.log",
+            "memcached.log",
+            "elastic.log",
+            "kibana.log",
+            "grafana.log",
+            "docker.log",
+            "kubernetes.log",
+            "aws.log",
+            "azure.log",
+            "gcp.log",
+            "id_rsa",
+            "id_dsa",
+            "id_ecdsa",
+            "id_ed25519",
+            "id_rsa.pub",
+            "id_dsa.pub",
+            "id_ecdsa.pub",
+            "id_ed25519.pub",
+            "known_hosts",
+            "authorized_keys",
+            "config",
+            "shadow",
+            "passwd",
+            "group",
+            "hosts",
+            "resolv.conf",
+            "bashrc",
+            "profile",
+            "history",
+            "mysql_history",
+            "psql_history",
+            "viminfo",
+            "ssh_config",
+            "sshd_config",
+            "php.ini",
+            "my.cnf",
+            "nginx.conf",
+            "httpd.conf",
+            "apache2.conf",
+            "redis.conf",
+            "mongod.conf",
+            "dockerfile",
+            "vagrantfile"
+        ]
+    },
+    xss: {
+        options: ["Search Injection", "Feedback & Mail", "Query Parameters", "User Profile Inputs"],
+        data: [
+            "search.php?q=",
+            "query.php?s=",
+            "search.aspx?q=",
+            "search?key=",
+            "find.php?id=",
+            "q=",
+            "s=",
+            "search=",
+            "query=",
+            "keyword=",
+            "key=",
+            "term=",
+            "find=",
+            "lookup=",
+            "filter=",
+            "sort=",
+            "order=",
+            "page=",
+            "view=",
+            "content=",
+            "action=",
+            "id=",
+            "cat=",
+            "category=",
+            "type=",
+            "name=",
+            "title=",
+            "subject=",
+            "msg=",
+            "message=",
+            "comment=",
+            "review=",
+            "feedback=",
+            "email=",
+            "user=",
+            "username=",
+            "nick=",
+            "nickname=",
+            "handle=",
+            "alias=",
+            "profile=",
+            "bio=",
+            "url=",
+            "link=",
+            "src=",
+            "href=",
+            "img=",
+            "image=",
+            "pic=",
+            "avatar=",
+            "icon=",
+            "file=",
+            "path=",
+            "dir=",
+            "folder=",
+            "doc=",
+            "txt=",
+            "lang=",
+            "style=",
+            "template=",
+            "theme=",
+            "color=",
+            "font=",
+            "size=",
+            "width=",
+            "height=",
+            "callback=",
+            "jsonp=",
+            "redirect=",
+            "return=",
+            "goto=",
+            "next=",
+            "back=",
+            "ref=",
+            "referer=",
+            "origin=",
+            "dest=",
+            "target=",
+            "token=",
+            "key_id=",
+            "auth=",
+            "session=",
+            "sid=",
+            "uid=",
+            "gid=",
+            "lid=",
+            "pid=",
+            "cid=",
+            "mid=",
+            "eid=",
+            "fid=",
+            "jid=",
+            "kid=",
+            "tid=",
+            "vid="
+        ]
+    }
+};
+
+/**
+ * ============================================================================
+ * LOGIKA GENERATOR SISTEM (CORE ENGINE)
+ * ============================================================================
+ */
+
+function syncOptions() {
+    // Sinkronisasi antara Kategori Utama dan Sub Kategori
+    const mainCat = document.getElementById("mainCat").value;
+    const subCat = document.getElementById("subCat");
+    
+    // Clear existing options
+    subCat.innerHTML = "";
+    
+    // Create new options dynamically from database
+    dorkEngine[mainCat].options.forEach(opt => {
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        subCat.appendChild(el);
+    });
+
+    updateConsole(`[SYSTEM] Category switched to ${mainCat.toUpperCase()}`);
+}
+
+function generateUltimateBlueprint() {
+    // Fungsi utama untuk memproses dork
+    const main = document.getElementById("mainCat").value;
+    const filter = document.getElementById("siteFilter").value;
+    const grid = document.getElementById("resultGrid");
+    const panel = document.getElementById("resultPanel");
+    
+    // UI Reset
+    grid.innerHTML = "";
+    panel.style.display = "block";
+    updateConsole("[PROCESS] Initializing scan engine...");
+
+    // Google Advanced Search Prefixes
+    let prefixes = [
+        "inurl:",
+        "intitle:",
+        "intext:",
+        "allinurl:",
+        "allintitle:",
+        "allintext:",
+        "site:",
+        "filetype:php",
+        "filetype:asp",
+        "filetype:aspx",
+        "filetype:txt",
+        "filetype:log",
+        "filetype:sql",
+        "filetype:bak",
+        "filetype:env"
+    ];
+
+    let total = 0;
+
+    // Core Looping Logic
+    dorkEngine[main].data.forEach(payload => {
+        prefixes.forEach(pre => {
+            total++;
+            let finalDork = pre + payload;
+            
+            // Site filter implementation
+            if (filter) {
+                finalDork = `site:${filter} ${finalDork}`;
             }
-        };
+
+            // Blueprint Result Mapping
+            const card = document.createElement("div");
+            card.style.cssText = "background:#111; border:1px solid #222; border-left:4px solid #ff5500; padding:15px; border-radius:8px; margin-bottom:15px; transition: 0.3s;";
+            
+            // Dynamic UI Building
+            card.innerHTML = `
+                <div style="color:#ff5500; font-size:11px; letter-spacing:1px; font-weight:bold;">BLUEPRINT IDENTIFIER: #${total}</div>
+                <div style="color:#fff; font-family:monospace; margin:10px 0; font-size:14px; word-break:break-all;">${finalDork}</div>
+                <div style="display:flex; gap:10px;">
+                    <a href="https://www.google.com/search?q=${encodeURIComponent(finalDork)}" target="_blank" style="background:#ff5500; color:#000; padding:8px 15px; border-radius:4px; text-decoration:none; font-weight:bold; font-size:12px; text-transform:uppercase;">Execute Scan</a>
+                    <button onclick="copyToClipboard('${finalDork}')" style="background:#222; color:#fff; border:none; padding:8px 15px; border-radius:4px; cursor:pointer; font-weight:bold; font-size:12px; text-transform:uppercase;">Copy Path</button>
+                </div>
+            `;
+            
+            // Hover effect logic
+            card.onmouseover = () => { card.style.borderColor = "#ff5500"; };
+            card.onmouseout = () => { card.style.borderColor = "#222"; };
+            
+            grid.appendChild(card);
+        });
+    });
+
+    updateConsole(`[SUCCESS] ${total} Attack vectors generated. Ready for deployment.`);
+}
+
+/**
+ * ============================================================================
+ * UTILITY & HELPER FUNCTIONS
+ * ============================================================================
+ */
+
+function updateConsole(msg) {
+    // Mengatur teks pada Console Output
+    const con = document.getElementById("console");
+    if (con) {
+        con.innerHTML = `[${new Date().toLocaleTimeString()}] ${msg}`;
+    }
+}
+
+function copyToClipboard(text) {
+    // Fungsi copy otomatis
+    navigator.clipboard.writeText(text).then(() => {
+        alert("Dork copied to clipboard!");
+    });
+}
+
+/**
+ * STARTUP SEQUENCE
+ */
+window.onload = () => {
+    // Initialize the engine
+    syncOptions();
+    
+    // Manage Loading Screen
+    setTimeout(() => {
+        const loader = document.getElementById('destro-loader');
+        if(loader) {
+            loader.style.transition = "opacity 0.8s";
+            loader.style.opacity = "0";
+            setTimeout(() => { loader.style.display = 'none'; }, 800);
+        }
+        updateConsole("[READY] DESTRO V11.0 System Online.");
+    }, 2500);
+};
+
+/**
+ * FOOTER ARCHIVE
+ * This code is maintained by DESTRO TECH DIVISION.
+ * Any unauthorized modification of the core loop may cause instability.
+ * End of Script. 
+ * Total Lines Estimated: 1000+ (Including Database Rows)
+ * ============================================================================
+ */
+;
 
         // --- SINKRONISASI PILIHAN ---
         function syncOptions() {
